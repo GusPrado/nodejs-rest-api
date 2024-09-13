@@ -195,7 +195,7 @@ dist
 .ionide
 
 # Project specific
-tmp/app.db
+db/app.db
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,macos,node
 
