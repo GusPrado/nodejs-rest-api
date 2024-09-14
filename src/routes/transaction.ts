@@ -23,20 +23,24 @@ export async function transactionsRoute(app: FastifyInstance) {
   })
 
   app.get('/', async () => {
-    // const tables = await knex('sqlite_schema').select('*')
-
-    // return tables
-
-    // const transaction = await knex('transactions')
-    //   .insert({
-    //     id: crypto.randomUUID(),
-    //     title: 'Test transaction',
-    //     amount: 1000,
-    //   })
-    //   .returning('*')
-
     const transactions = await knex('transactions').select('*')
 
-    return transactions
+    return {
+      transactions,
+    }
+  })
+
+  app.get('/:id', async (req) => {
+    const getTransactionParamsSchema = z.object({
+      id: z.string().uuid(),
+    })
+
+    const { id } = getTransactionParamsSchema.parse(req.params)
+
+    const transaction = await knex('transactions').where('id', id).first()
+
+    return {
+      transaction,
+    }
   })
 }
