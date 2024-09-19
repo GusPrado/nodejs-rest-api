@@ -12,8 +12,8 @@
 ##RN
 
 [x] A transação poderá ser do tipo crédito que somará o valor, ou débito que subtrairá.
-[ ] Deve ser possível identificarmos o usuário entre as requisições
-[ ] O usuário só pode visualizar as transações as quais criou
+[x] Deve ser possível identificarmos o usuário entre as requisições
+[x] O usuário só pode visualizar as transações as quais criou
 
 ##RNF
 
