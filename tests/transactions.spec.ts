@@ -1,7 +1,7 @@
+import { app } from './../src/app'
 import { beforeAll, afterAll, describe, it, expect, beforeEach } from 'vitest'
 import { execSync } from 'node:child_process'
 import request from 'supertest'
-import { app } from './app'
 
 describe('Transaction routes', () => {
   beforeAll(async () => {
